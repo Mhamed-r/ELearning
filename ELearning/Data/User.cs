@@ -6,12 +6,12 @@ namespace ELearning.Data
     {
         public User()
         {
-            Id=Guid.CreateVersion7().ToString();
+            Id = Guid.CreateVersion7().ToString();
             SecurityStamp = Guid.CreateVersion7().ToString();
         }
 
         public string Name { get; set; } = string.Empty;   
-        public DateTime CreatedAt { get; set; }= DateTime.Now;
+        public DateTime CreatedAt { get; set; }=DateTime.Now;
 
 
         //-------------- ICollection From Course  ---------------

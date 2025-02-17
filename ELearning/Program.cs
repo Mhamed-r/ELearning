@@ -19,6 +19,7 @@ namespace ELearning
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+            
 
             //builder.Services.AddAutoMapper<>();
 

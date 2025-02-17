@@ -3,7 +3,7 @@
     public class Enrollment
     {
         public int Id { get; set; }      
-        public string Status { get; set; }
+        public string? Status { get; set; }
         public DateTime EnrolledAt { get; set; }=DateTime.Now;
 
 
