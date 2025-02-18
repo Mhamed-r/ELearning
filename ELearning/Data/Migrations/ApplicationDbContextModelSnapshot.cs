@@ -18,6 +18,9 @@ namespace ELearning.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.2")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -86,6 +89,9 @@ namespace ELearning.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
                     b.Property<string>("InstructorId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -98,7 +104,7 @@ namespace ELearning.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -113,20 +119,20 @@ namespace ELearning.Data.Migrations
                             Id = 1,
                             CreatedAt = new DateTime(2023, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description for Course 1",
+                            Duration = 0,
                             InstructorId = "1",
                             Price = 150m,
-                            Title = "Course 1",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Title = "Course 1"
                         },
                         new
                         {
                             Id = 2,
                             CreatedAt = new DateTime(2023, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description for Course 2",
+                            Duration = 0,
                             InstructorId = "2",
                             Price = 250m,
-                            Title = "Course 2",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Title = "Course 2"
                         });
                 });
 
@@ -625,7 +631,7 @@ namespace ELearning.Data.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8c2e8eb6-dd5d-4a60-9c5d-09f0cc8fd8ac",
+                            ConcurrencyStamp = "643a58d8-1eb1-4bd8-9269-1bded40bb892",
                             Email = "johndoe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -640,7 +646,7 @@ namespace ELearning.Data.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "072c426f-0ef1-4407-ba88-7c8a2170487c",
+                            ConcurrencyStamp = "2670d463-b877-4e4f-8612-b3a9474edb2f",
                             Email = "janesmith@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,

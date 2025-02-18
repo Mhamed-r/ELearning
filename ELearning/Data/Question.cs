@@ -10,11 +10,11 @@
 
         //-------------- Obj From Quez Abd Forigen key QuizId ---------------
         public int QuizId { get; set; }
-        public Quiz Quiz { get; set; }
+        public virtual Quiz Quiz { get; set; }
 
 
 
         //-------------- ICollection From Answer  ---------------
-        public ICollection<Answer> Answers { get; set; }
+        public virtual ICollection<Answer> Answers { get; set; }
     }
 }

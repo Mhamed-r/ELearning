@@ -9,13 +9,13 @@
 
         //-------------- Obj From Question Abd Forigen key QuestionId ---------------
         public int QuestionId { get; set; }
-        public Question Question { get; set; }
+        public virtual Question Question { get; set; }
 
 
 
         //-------------- Obj From User Abd Forigen key StudentId ---------------
         public string StudentId { get; set; }
-        public User Student { get; set; }
+        public virtual User Student { get; set; }
     }
 
 }

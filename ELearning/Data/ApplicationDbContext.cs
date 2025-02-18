@@ -93,11 +93,6 @@ namespace ELearning.Data
                 new Review { Id = 1, StudentId = "1", CourseId = 1, Rating = 5, Comment = "Great course!" },
                 new Review { Id = 2, StudentId = "2", CourseId = 2, Rating = 4, Comment = "Good course, but could be better." }
             );
-
-
-
-
-
         }
     }
     

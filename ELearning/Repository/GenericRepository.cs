@@ -1,18 +1,19 @@
 ﻿using ELearning.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ELearning.Repository
 {
     public class GenericRepository <TEntity> where TEntity : class
     {
-        ApplicationDbContext dbContext;
+      public  ApplicationDbContext dbContext;
 
         public GenericRepository( ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-        public List<TEntity> Getall()
+        public  List<TEntity> Getall()
         {
-            return dbContext.Set<TEntity>().ToList();
+            return  dbContext.Set<TEntity>().ToList();
         }
 
         public TEntity Getbyid(int id)
@@ -26,7 +27,7 @@ namespace ELearning.Repository
             dbContext.Set<TEntity>().Add(entity);
         }
 
-        public void Edit(TEntity entity)
+        public  void Edit(TEntity entity)
         {
             dbContext.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         }
@@ -41,6 +42,11 @@ namespace ELearning.Repository
         {
             dbContext.SaveChanges();
         }
+        public bool Exists(int id)
+        {
+            return Getbyid(id) != null;
+        }
+
 
     }
 }

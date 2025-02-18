@@ -9,11 +9,11 @@
 
         //-------------- Obj From Course Abd Forigen key CourseId ---------------
         public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
 
 
 
         //-------------- ICollection From Question  ---------------
-        public ICollection<Question> Questions { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ELearning.Data
 {
@@ -7,39 +9,41 @@ namespace ELearning.Data
 
         public int Id { get; set; }
         public string Title { get; set; }
-        public string Description { get; set; }       
+        public string Description { get; set; }
         public decimal Price { get; set; }
+        public int Duration { get; set; }
         public DateTime CreatedAt { get; set; }=DateTime.Now;
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
-        //-------------- Obj From User Abd Forigen key InstructorId ---------------       
+        //-------------- Obj From User Abd Forigen keyInstructorId ---------------
+        [DisplayName("Instructor")]
         public string InstructorId { get; set; }
-        public User Instructor { get; set; }
+        public virtual User? Instructor { get; set; }
 
 
 
         //-------------- ICollection From Lesson  ---------------
-        public ICollection<Lesson> Lessons { get; set; }
+        public virtual ICollection<Lesson>? Lessons { get; set; }
 
 
 
         //-------------- ICollection From Quiz  ---------------
-        public ICollection<Quiz> Quizzes { get; set; }
+        public virtual ICollection<Quiz>? Quizzes { get; set; }
 
 
 
         //-------------- ICollection From Enrollment  ---------------
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Enrollment>? Enrollments { get; set; }
 
 
 
         //-------------- ICollection From Payment  ---------------
-        public ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<Payment>? Payments { get; set; }
 
 
 
         //-------------- ICollection From Review  ---------------
-        public ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Review>? Reviews { get; set; }
 
     }
 }

@@ -1,0 +1,8 @@
+Mohamed Reda
+update GenericRepository add Exists
+add int Duration(col) Course
+Create Courses Controller with Views Create, Delete, Details, Edit , Index 
+update Relational virtual to using lazy load
+update UpdatedAt(col) Nullable
+add CourseRepository
+add Course in Navbar _Layout

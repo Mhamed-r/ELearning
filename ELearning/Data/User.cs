@@ -15,25 +15,25 @@ namespace ELearning.Data
 
 
         //-------------- ICollection From Course  ---------------
-        public ICollection<Course> Courses { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
 
 
         //-------------- ICollection From Enrollment  ---------------
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
 
 
 
         //-------------- ICollection From Answer  ---------------
-        public ICollection<Answer> Answers { get; set; }
+        public virtual ICollection<Answer> Answers { get; set; }
 
 
 
         //-------------- ICollection From Payment  ---------------
-        public ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<Payment> Payments { get; set; }
 
 
 
         //-------------- ICollection From Review  ---------------
-        public ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }
